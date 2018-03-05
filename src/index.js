@@ -11,7 +11,8 @@ class Lamp extends React.Component {
   }
 
   render() {
-    return <div className='lamp'>Lamp!</div>;
+    const styles = this.state.isOn ? 'lamp lamp--on' : 'lamp';
+    return <div className={styles}>Lamp!</div>;
   }
 }
 
