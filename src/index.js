@@ -22,7 +22,11 @@ class Lamp extends React.Component {
     ? 'lamp lamp--on' 
     : 'lamp';
     
-    return <div className={styles} onClick={this.onLampClick} >Lamp!</div>;
+    return( 
+      <div className={styles} onClick={this.onLampClick} >
+        Lamp is {this.state.isOn ? 'ON' : 'OFF'} <br/>
+        inital state {this.props.isOn ? 'ON' : 'OFF'}
+      </div>);
   }
 }
 
