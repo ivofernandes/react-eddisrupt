@@ -6,13 +6,23 @@ class Lamp extends React.Component {
     super(props);
 
     this.state = {
-      isOn: false
+      isOn: props.isOn
     };
   }
 
+  onLampClick =() => {
+    //this.state.isOn = !this.state.isOn;
+    this.setState({
+      isOn: !this.state.isOn
+    });
+  }
+
   render() {
-    const styles = this.state.isOn ? 'lamp lamp--on' : 'lamp';
-    return <div className={styles}>Lamp!</div>;
+    const styles = this.state.isOn 
+    ? 'lamp lamp--on' 
+    : 'lamp';
+    
+    return <div className={styles} onClick={this.onLampClick} >Lamp!</div>;
   }
 }
 
@@ -22,6 +32,7 @@ function App(props) {
 
 render(
   <App>
+    <Lamp isOn/>
     <Lamp />
   </App>,
   document.getElementById("root")
