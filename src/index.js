@@ -1,12 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
 
-/*
-function Lamp() {
-  return <div>Lamp!</div>
-}
-*/
-
 class Lamp extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +11,7 @@ class Lamp extends React.Component {
   }
 
   render() {
-    return <div>Lamp!</div>;
+    return <div className='lamp'>Lamp!</div>;
   }
 }
 
