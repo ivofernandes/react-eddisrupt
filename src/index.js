@@ -1,6 +1,12 @@
 import React from "react";
 import { render } from "react-dom";
 
+function LampState(props){
+  return (
+    <span>{props.isOn ? 'ON' : 'OFF'}</span>
+  )
+}
+
 class Lamp extends React.Component {
   constructor(props) {
     super(props);
@@ -24,8 +30,8 @@ class Lamp extends React.Component {
     
     return( 
       <div className={styles} onClick={this.onLampClick} >
-        Lamp is {this.state.isOn ? 'ON' : 'OFF'} <br/>
-        inital state {this.props.isOn ? 'ON' : 'OFF'}
+        Lamp is <LampState isOn={this.state.isOn }/> <br/>
+        it was initally <LampState isOn={this.props.isOn} />
       </div>);
   }
 }
